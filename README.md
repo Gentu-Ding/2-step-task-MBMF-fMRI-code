@@ -1,1 +1,1 @@
-# 2-step-task-MBMF-fMRI-codes
+# 2-step-task-MBMF-fMRI-code
