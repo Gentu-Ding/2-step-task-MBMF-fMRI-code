@@ -1,1 +1,2 @@
-This subfolder contains the MATLAB PTB task code of the 2-step task for the fMRI experiment.
+This subfolder contains the MATLAB PTB task code of the 2-step task for the fMRI experiment. The original author of the task code is Dr. Jeffrey Cockburn. 
+Please also refer to the work of Cockburn et al. (2024) for the task: https://doi.org/10.31234/osf.io/egq3x.  
