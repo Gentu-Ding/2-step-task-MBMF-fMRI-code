@@ -2,7 +2,7 @@
 
 This repository contains the task code (MATLAB PTB) to run the 2-step task and the analysis code on the behavioral and fMRI data to conduct the model-based fMRI analysis in the following paper:
 
-Ding, Cockburn et al. (2026): [https://doi.org/10.1016/j.celrep.2026.117454](https://doi.org/10.1016/j.celrep.2026.117454); 
+Ding, Cockburn, et al. (2026): [https://doi.org/10.1016/j.celrep.2026.117454](https://doi.org/10.1016/j.celrep.2026.117454); 
 
 
 Note: Within this repository, the author of the task code and the computational model is Dr. Jeffrey Cockburn. 
