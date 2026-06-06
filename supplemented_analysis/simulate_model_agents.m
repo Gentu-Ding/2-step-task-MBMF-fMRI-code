@@ -47,11 +47,11 @@ for sI=1:size(allFiles1,1)
         
         nameMat = ['/Users/olab/Weilun/R01_MBMF_Habits_Behaviors/Behaviors_Modeling_fMRI/lap_subjects_sfMRI/lap_control_mbmf_wsls_magMF_binMB_MF/lap_' name_sf '.mat' ];
         
-        % All fitted parameters from the model sets:
-        % lap_control_mbmf_wsls_arb_magMF_binMB_mbRPE_mfRPE_SPE
-        % lap_control_mbmf_wsls_magMF_binMB_FW
-        % lap_control_mbmf_wsls_magMF_binMB_MB
-        % lap_control_mbmf_wsls_magMF_binMB_MF
+        % All fitted parameters from the model sets:        
+        % Arbitration Mixture model: lap_control_mbmf_wsls_arb_magMF_binMB_mbRPE_mfRPE_SPE
+        % Fixed-weight model: lap_control_mbmf_wsls_magMF_binMB_FW 
+        % Model-based model: lap_control_mbmf_wsls_magMF_binMB_MB
+        % Model-free model: lap_control_mbmf_wsls_magMF_binMB_MF
 
         
         load(nameMat)
@@ -68,10 +68,10 @@ for sI=1:size(allFiles1,1)
         [negLLE, fitData] = generateData_magMF_binMB_MF_rewMag_WSLS(params, subData);
 
         % All data-generating model functions:
-        % generateData_magMF_binMB_mbRPE_mfRPE_SPE_rewMag_WSLS
-        % generateData_magMF_binMB_FW_rewMag_WSLS
-        % generateData_magMF_binMB_MB_rewMag_WSLS
-        % generateData_magMF_binMB_MF_rewMag_WSLS
+        % Arbitration Mixture model: generateData_magMF_binMB_mbRPE_mfRPE_SPE_rewMag_WSLS
+        % Fixed-weight model: generateData_magMF_binMB_FW_rewMag_WSLS
+        % Model-based model: generateData_magMF_binMB_MB_rewMag_WSLS
+        % Model-free model: generateData_magMF_binMB_MF_rewMag_WSLS
         
         
         subData.Resp1 = fitData.resp1;
