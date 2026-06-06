@@ -7,7 +7,8 @@ clearvars -except mdl mdl_MB mdl_hmm mdl_rac
 allData_all = readtable(['reg_control_sf_all_10_trials_updated.csv']); 
 
 % or 
-allData_all = readtable(['reg_rac_mbGroup.csv']);
+
+allData_all = readtable(['reg_MB_mbGroup.csv']); % reg_MB_mbGroup.csv; reg_hmm_mbGroup.csv; reg_rac_mbGroup.csv
 
 all_names = allData_all.subIndex;
 
