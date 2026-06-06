@@ -11,7 +11,7 @@ allFiles1 = readtable('../ID_list.csv');
 
 Sub_list = readtable('../R01_control_clusterID_wMF_formal_updated.csv');
 
-group_subs = Sub_list.ID; %(Sub_list.clusterID==3); % dictionary: 1-Mixture, 2-MF, 3-MB, 4-Other
+group_subs = Sub_list.ID(Sub_list.clusterID==3); % dictionary: 1-Mixture, 2-MF, 3-MB, 4-Other
 
 
 id=0;
@@ -46,10 +46,16 @@ for sI=1:size(allFiles1,1)
    
         
         nameMat = ['/Users/olab/Weilun/R01_MBMF_Habits_Behaviors/Behaviors_Modeling_fMRI/lap_subjects_sfMRI/lap_control_mbmf_wsls_magMF_binMB_MF/lap_' name_sf '.mat' ];
-        %nameMat = 'params_arb.mat';
+
+        % All fitted parameters from the model sets:
+        % lap_control_mbmf_wsls_arb_magMF_binMB_mbRPE_mfRPE_SPE
+        % lap_control_mbmf_wsls_magMF_binMB_MB
+        % lap_control_mbmf_wsls_magMF_binMB_FW
+        % lap_control_mbmf_wsls_magMF_binMB_MF
+        
         load(nameMat)
         
-        %lap_control_mbmf_wsls_arb_magMF_binMB_mbRPE_mfRPE_SPE
+
         
         %params = mean(params_arb);
         params = cbm.output.parameters;
@@ -59,6 +65,12 @@ for sI=1:size(allFiles1,1)
         
         
         [negLLE, fitData] = generateData_magMF_binMB_MF_rewMag_WSLS(params, subData);
+
+        % All data-generating model functions:
+        % generateData_magMF_binMB_mbRPE_mfRPE_SPE_rewMag_WSLS
+        % generateData_magMF_binMB_FW_rewMag_WSLS
+        % generateData_magMF_binMB_MB_rewMag_WSLS
+        % generateData_magMF_binMB_MF_rewMag_WSLS
         
         
         subData.Resp1 = fitData.resp1;
@@ -219,7 +231,7 @@ h2 = histogram(acc_random, 'BinWidth',0.01);
 hold on
 xlabel('Proportion of Rewarded Trials')
 ylabel('Number of Agents')
-title('Simulation: Performance of MB agents')
+title('Simulation: Performance')
 legend({'MB agents';"Random agents"})
 set(gca,'FontSize',18);
 
