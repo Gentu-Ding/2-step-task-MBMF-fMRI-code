@@ -11,7 +11,7 @@ allFiles1 = readtable('../ID_list.csv');
 
 Sub_list = readtable('../R01_control_clusterID_wMF_formal_updated.csv');
 
-group_subs = Sub_list.ID(Sub_list.clusterID==3); % dictionary: 1-Mixture, 2-MF, 3-MB, 4-Other
+group_subs = Sub_list.ID(Sub_list.clusterID==2); % dictionary: 1-Mixture, 2-MF, 3-MB, 4-Other
 
 
 id=0;
