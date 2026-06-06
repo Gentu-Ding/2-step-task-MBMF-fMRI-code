@@ -45,7 +45,7 @@ for sI=1:size(allFiles1,1)
         
    
         
-        nameMat = ['/Users/olab/Weilun/R01_MBMF_Habits_Behaviors/Behaviors_Modeling_fMRI/lap_subjects_sfMRI/lap_control_mbmf_wsls_magMF_binMB_MF/lap_' name_sf '.mat' ];
+        % nameMat = ['/Users/olab/Weilun/R01_MBMF_Habits_Behaviors/Behaviors_Modeling_fMRI/lap_subjects_sfMRI/lap_control_mbmf_wsls_magMF_binMB_MF/lap_' name_sf '.mat' ];
         
         % All fitted parameters from the model sets:        
         % Arbitration Mixture model: lap_control_mbmf_wsls_arb_magMF_binMB_mbRPE_mfRPE_SPE
@@ -53,10 +53,10 @@ for sI=1:size(allFiles1,1)
         % Model-based model: lap_control_mbmf_wsls_magMF_binMB_MB
         % Model-free model: lap_control_mbmf_wsls_magMF_binMB_MF
 
-        
+
+        nameMat = 'params_mb.mat';   % params_fw.mat; params_mb.mat; params_mf.mat
         load(nameMat)
         
-
         
         %params = mean(params_arb);
         params = cbm.output.parameters;
