@@ -279,7 +279,7 @@ allData_all = readtable(['reg_mf_all.csv']); % reg_fw_all.csv; reg_mb_all.csv; r
 all_names = allData_all.subIndex;
 
 
-Sub_list = readtable('ID_list.csv');
+Sub_list = readtable('../ID_list.csv');
 
 for i =1: size(Sub_list,1)
    include_subs(i,1) = str2double(Sub_list.name{i}(4:7)) ;
