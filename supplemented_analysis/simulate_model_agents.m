@@ -14,7 +14,7 @@ Sub_list = readtable('../R01_control_clusterID_wMF_formal_updated.csv');
 % Simulate agents' p(Stay) behaviors
 group_subs = Sub_list.ID;   
 
-% Use the following for performance plots: group_subs = Sub_list.ID(Sub_list.clusterID==2);       --- dictionary: 1-Mixture, 2-MF, 3-MB, 4-Other
+% Use the following for agents' accuracy performance plots:  group_subs = Sub_list.ID(Sub_list.clusterID==2);      --- dictionary: 1-Mixture, 2-MF, 3-MB, 4-Other
 
 
 id=0;
