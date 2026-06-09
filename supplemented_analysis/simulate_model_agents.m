@@ -56,6 +56,7 @@ for sI=1:size(allFiles1,1)
         % Model-based model: lap_control_mbmf_wsls_magMF_binMB_MB
         % Model-free model: lap_control_mbmf_wsls_magMF_binMB_MF
         
+        
         params = cbm.output.parameters;
 
         %nameMat = 'params_fw.mat';   % params_fw.mat; params_mb.mat; params_mf.mat
@@ -72,10 +73,11 @@ for sI=1:size(allFiles1,1)
         [negLLE, fitData] = generateData_magMF_binMB_FW_rewMag_WSLS(params, subData);
 
         % All data-generating model functions:
-        % Arbitration Mixture model: generateData_magMF_binMB_mbRPE_mfRPE_SPE_rewMag_WSLS
-        % Fixed-weight model: generateData_magMF_binMB_FW_rewMag_WSLS
-        % Model-based model: generateData_magMF_binMB_MB_rewMag_WSLS
-        % Model-free model: generateData_magMF_binMB_MF_rewMag_WSLS
+        % Arbitration Mixture model: generateData_magMF_binMB_mbRPE_mfRPE_SPE_rewMag_WSLS(params, subData)
+        % Fixed-weight model: generateData_magMF_binMB_FW_rewMag_WSLS(params, subData)
+        % Model-based model: generateData_magMF_binMB_MB_rewMag_WSLS(params, subData)
+        % Model-free model: generateData_magMF_binMB_MF_rewMag_WSLS(params, subData)
+        % Random agent: generateData_random_agent(subData)
         
         
         subData.Resp1 = fitData.resp1;
