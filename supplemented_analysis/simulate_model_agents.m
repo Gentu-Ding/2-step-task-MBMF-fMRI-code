@@ -11,7 +11,10 @@ allFiles1 = readtable('../ID_list.csv');
 
 Sub_list = readtable('../R01_control_clusterID_wMF_formal_updated.csv');
 
-group_subs = Sub_list.ID(Sub_list.clusterID==2); % dictionary: 1-Mixture, 2-MF, 3-MB, 4-Other
+% Simulate agents' p(Stay) behaviors
+group_subs = Sub_list.ID;   
+
+% Use the following for performance plots: group_subs = Sub_list.ID(Sub_list.clusterID==2); --- dictionary: 1-Mixture, 2-MF, 3-MB, 4-Other
 
 
 id=0;
@@ -45,27 +48,28 @@ for sI=1:size(allFiles1,1)
         
    
         
-        % nameMat = ['/Users/olab/Weilun/R01_MBMF_Habits_Behaviors/Behaviors_Modeling_fMRI/lap_subjects_sfMRI/lap_control_mbmf_wsls_magMF_binMB_MF/lap_' name_sf '.mat' ];
+        nameMat = ['/Users/olab/Weilun/R01_MBMF_Habits_Behaviors/Behaviors_Modeling_fMRI/lap_subjects_sfMRI/lap_control_mbmf_wsls_magMF_binMB_FW/lap_' name_sf '.mat' ];
         
         % All fitted parameters from the model sets:        
         % Arbitration Mixture model: lap_control_mbmf_wsls_arb_magMF_binMB_mbRPE_mfRPE_SPE
         % Fixed-weight model: lap_control_mbmf_wsls_magMF_binMB_FW 
         % Model-based model: lap_control_mbmf_wsls_magMF_binMB_MB
         % Model-free model: lap_control_mbmf_wsls_magMF_binMB_MF
+        
+        params = cbm.output.parameters;
 
-
-        nameMat = 'params_mb.mat';   % params_fw.mat; params_mb.mat; params_mf.mat
-        load(nameMat)
+        %nameMat = 'params_fw.mat';   % params_fw.mat; params_mb.mat; params_mf.mat
+        %load(nameMat)
         
         
         %params = mean(params_arb);
-        params = cbm.output.parameters;
+       
         
         %params_arb(id,:) = params;
         %params = mean_params;
         
         
-        [negLLE, fitData] = generateData_magMF_binMB_MF_rewMag_WSLS(params, subData);
+        [negLLE, fitData] = generateData_magMF_binMB_FW_rewMag_WSLS(params, subData);
 
         % All data-generating model functions:
         % Arbitration Mixture model: generateData_magMF_binMB_mbRPE_mfRPE_SPE_rewMag_WSLS
