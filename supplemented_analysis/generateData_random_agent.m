@@ -15,6 +15,13 @@ fitData = struct();
 %fitData.choice = data.resp1;
 dataTID = data.trialID;
 
+fitData.condState = data.condState;
+%fitData.condContingent = data.condContingent;
+fitData.condReward = data.condReward;
+fitData.doRareTrans = data.doRareTrans;
+fitData.trialID = data.trialID;
+fitData.runID = data.runID;
+
 
 for tI = 1:size(dataTID,1)
     
@@ -67,7 +74,7 @@ end
 fitData.pChoice     = 0.5*ones(size(dataTID,1), 1 );
 
 
-% determin which trials should be included in the fit
+% determine which trials should be included in the fit
 isValidTrial = ~isnan(fitData.resp1);
 n = sum(isValidTrial);
 k = 0;
@@ -80,9 +87,9 @@ fitData.pseudoR = 1 - (fitData.negLLE/fitData.null_negLLE);
 % compute the negative log-like
 negLLE = fitData.negLLE;
 
-fitData.AIC = k*log(n)-2*fitData.negLLE;
-fitData.BIC = 2*k-2*fitData.negLLE;
 
+fitData.AIC = 2*k-2*fitData.negLLE;
+fitData.BIC = k*log(n)-2*fitData.negLLE;
 
 
 end
